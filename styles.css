@@ -83,7 +83,7 @@ header .navbar {
 }
 
 body {
-    padding-top: 85px; /*Prevent content overlap with the header*/
+    padding-top: 80px; /*Prevent content overlap with the header*/
 }
 
 /*HERO SECTION*/
@@ -395,7 +395,12 @@ body {
         gap: 50px; /*Set spacing between description and development*/
     }
 
+    .about-me-section .about-me-details .description {
+        padding: 10px 30px;
+    }
+
     .contact-form {
         width: 400px; /*Set width for contact form*/
     }
+
 }
