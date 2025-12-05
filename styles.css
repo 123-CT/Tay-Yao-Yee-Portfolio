@@ -1,0 +1,401 @@
+/*Import fonts from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+/*Reset browser defaults (remove outer spacing, inner spacing, easy to control width & height of elements*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors*/
+    --white-color: #fff;
+    --dark-color: #252525;
+    --dark-blue-color: #001BB7;
+    --light-blue-color: #C2E2FA;
+
+    /*Font size*/
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.2rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+}
+
+ul {
+    list-style: none; /*No bullets were used in unordered list*/
+}
+
+a {
+    text-decoration: none; /*To remove underlines under the links*/
+}
+
+button {
+    cursor: pointer; /*Mouse cursor changes to a "small hand" when hovering the button*/
+    border: none; /*Removes default button border added by the browser*/
+    background: none; /*Removes default button background*/
+}
+
+section {
+    scroll-margin-top: 80px; /*To prevent section content hide under the fixed header*/
+}
+
+.hero-section,
+.project-section,
+.about-me-section {
+    min-height: 100vh; /*Each section is at least one fullscreen tall*/
+    display: flex; /*Each section is a flex container*/ 
+    align-items: center; /*Centers content vertically*/
+}
+
+/*HEADER*/
+header {
+    position: fixed; /*Keep header in fixed position*/
+    top: 0; /*Place header at the top of the page*/
+    width: 100%; /*Take full width of the screen*/
+    padding: 12px 20px; /*top & bottom: 12px, right & left: 20px*/
+    background: var(--light-blue-color); /*header background color*/
+} 
+
+header .navbar {
+    display: flex; /*Make navbar a flex container*/
+    padding: 20px; /*Add 20px padding inside navbar*/
+}
+
+.navbar .nav-menu {
+    display: flex; /*navbar buttons appears horizontally*/
+    gap: 10px; /*10px gap between each link*/
+    margin-left: auto; /*Pushes menu to right*/
+}
+
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px; /*Add padding inside the link for clickable area*/
+    color: var(--dark-blue-color); /*Link color*/
+    font-family: "Open Sans", sans-serif; /*Link font*/
+    font-size: var(--font-size-m); /*Link font size*/
+}
+
+.navbar :where(#menu-close-button, #menu-open-button) {
+    display: none; /*hide menu and close buttons on large screen*/
+}
+
+body {
+    padding-top: 85px; /*Prevent content overlap with the header*/
+}
+
+/*HERO SECTION*/
+.hero-section {
+    min-height: 80vh; /*At least 80% of the viewport height*/
+    background: linear-gradient(to bottom, #C2E2FA, #fff); /*Gradient background for hero section*/
+    display: flex; /*Make it a flex container*/
+    align-items: center; /*Center the content vertically*/
+    justify-content: center; /*Center the content horizontally*/
+}
+
+.hero-section .hero-image-wrapper {
+    margin: 0 30px; /*top & bottom : 0, right & left: 30px*/
+}
+
+.hero-image-wrapper img.hero-image {
+    width: 300px; /*Width for image*/
+    height: 300px; /*Height for image*/
+    border-radius: 50%; /*Make the image a circle*/
+}
+
+.hero-section .section-content {
+    display: flex; 
+    gap: 40px; /*Spacing between image and text*/
+    align-items: center; /*Center the children vertically*/
+    justify-content: center; /*Center the children horizontally*/
+    flex-wrap: wrap; /*Allow the content to wrap to next line on smaller screen*/
+}
+
+.hero-section .hero-details .name {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    font-size: var(--font-size-xxl);
+    color:  var(--dark-blue-color); /*Text color*/
+    font-family: "Bona Nova SC", sans-serif;
+    max-width: 600px; /*Prevent text from growing too wide*/
+    text-align: left; /*Align text to the left*/
+}
+
+.hero-section .hero-details .description {
+    margin-left: 30px;
+    font-size: var(--font-size-m);
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark-color); /*Description text color*/
+    max-width: 600px; /*Prevent description text does not get too wide*/
+    text-align: left; /*Align description text to the left*/
+    line-height: 1.8; /*Set line spacing between each line*/
+}
+
+/*PROJECT SECTION*/
+.project-section .section-content {
+    width: 100%; /*Forces the container to stretch across the entire screen*/
+    display: flex; /*Horizontal row layout*/
+    gap: 100px; /*Space between each card*/
+    justify-content: center; /*Cards are centered horizontally*/
+    flex-wrap: nowrap; /*Prevent cards from wrapping to next line*/
+}
+
+.project-card {
+    flex: 0 0 300px; /*fixed width for each card*/
+    padding: 30px; /*Inner spacing inside the card*/
+    margin-bottom: 100px;/*Space below each card*/
+    border-radius: 35px; /*Make round corners for the cards*/
+    text-align: center; /*Center text in the card*/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /*Add shadow under the card*/
+}
+
+.project-card img {
+    width: 100%; /*Images fill the card width*/
+    height: 180px; /*Fix height for the images on cards*/
+    object-fit: cover; /*Prevent images froms stretching*/
+    border-radius: 15px; /*Round corners for the images*/
+    margin-bottom: 15px; /*Add space below the images*/
+}
+
+.project-card h3 {
+    margin: 20px 0; /*Add space above and below the project name*/
+    font-family: "Open Sans", sans-serif; /*Project name font*/
+    color: var(--dark-color); /*Project name color*/
+}
+
+.project-bttn {
+    padding:10px; /*Add space inside the button*/
+    background: var(--dark-blue-color);
+    color: var(--white-color); /*Button text color*/
+    border-radius: 23px; /*Round corner for the button*/
+    font-family: "Open Sans", sans-serif; /*Button text font*/
+    font-size: var(--font-size-s); /*Button text font size*/
+}
+
+/*PROJECT DETAILS -> AFTER CLICK ON 'VIEW PROJECT'*/
+.project-detail-section {
+    max-width: 1000px; /*Set maximum width*/
+    margin: 50px auto; /*Top & bottom: 50px, right & left: auto centers horizontally*/
+    padding: 20px; /*Add space inside the section*/
+    font-family: "Open Sans", sans-serif; /*Font for this section*/
+}
+
+.project-detail-section img {
+    width: 100%; /*Image fills the width of the container*/
+}
+
+.project-detail-section h1 {
+    margin: 50px; /*Add space around the heading*/
+    padding: 40px 0; /*Add 40px inner spacing to the top and bottom of heading*/
+    text-align: center; /*Center the heading text*/
+}
+
+.project-details {
+    display: flex; /*Horizontal flex layout*/
+    justify-content: space-between; /*Place description and development with space between them*/
+    align-items: flex-start; /*Align the top of noth description and development*/
+    gap: 150px; /*Space between description and development*/
+}
+
+.project-description {
+    flex: 2; /*Take double the space of development*/
+}
+
+.project-description p {
+    line-height: 1.8; /*Set line spacing*/
+    text-align: justify; /*Justify the description*/
+}
+
+.development {
+    flex: 1; /*Take half the space of description*/
+}
+
+.development p {
+    margin-bottom: 15px; /*Add space below each of the development text*/
+    line-height: 2.0; /*Set line spacing*/
+}
+
+/*ABOUT ME*/
+.about-me-section .section-content {
+    width: 100%; /*Ensure it takes full width*/
+    display: flex; /*Make it a flex container*/
+    flex-direction: column; /*Stack image and description*/
+    align-items: center; /*Center image and description horizontally*/
+}
+
+.about-me-image-wrapper {
+    margin-bottom: 10px; /*Add space below the image*/
+}
+
+.about-me-image {
+    width: 100%; /*Image stretches to full width of the container*/
+    height: auto; /*To maintain the ratio*/
+    margin-bottom: 30px; /*Add space below image*/
+}
+
+.about-me-section .about-me-details .description {
+    max-width: 800px; /*Prevent it from stretching too wide*/
+    padding: 10px 120px; /*Add space inside the description text*/
+    margin: 10px 0; /*Add top and bottom spacing to the description text*/
+    font-size: var(--font-size-s); /*Description font size*/
+    font-family: "Open Sans", sans-serif; /*Description font*/
+    line-height: 1.8; /*Set line spacing*/
+    text-align: justify; /*Justify the description text*/
+}
+
+/*CONTACT*/
+.contact-section {
+    padding: 80px 20px; /*Top & bottom: 80px, right & left: 20px*/
+    background: linear-gradient(to bottom, #fff, #C2E2FA); /*Gradient background for contact section*/
+    display: flex; /*Make it a flex container*/
+    font-family: "Open Sans", sans-serif; /*Font in contact section*/
+    justify-content: center; /*Center child elements horizontally*/
+}
+
+.contact-section .title {
+    font-size: var(--font-size-xl); /*Title font size*/
+    text-align: center; /*Center the title horizontally*/
+    margin-bottom: 30px; /*Add space below the title*/
+    color: var(--dark-blue-color); /*Color of the title*/
+}
+
+.contact-form {
+    width: 800px; /*Set the width for contact form*/
+    max-width: 80%; /*Prevent the form from exceeding 80% of the viewport width on smaller screen*/
+    background: var(--white-color); /*Background color for the form*/
+    margin: 0 auto; /*Center the form horizontally*/
+    padding: 30px; /*Add space inside the form*/
+    border-radius: 20px; /*Round corners for the form*/
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /*Set shadow around the form*/
+}
+
+.input-group {
+    margin-bottom: 20px; /*Add space below each input group*/
+    display: flex; /*Make it a flex container*/
+    flex-direction: column; /*Stack the element vertically*/
+}
+
+.input-group label {
+    font-size: var(--font-size-s);
+    font-weight: bold;
+    margin-bottom: 8px; /*Add space below the label*/
+    color: var(--dark-blue-color); /*Label color*/
+    text-align: left; /*Label text align to the left*/
+}
+
+.input-group input, .input-group textarea {
+    padding: 10px; /*Add inner space for the text area*/
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size-s);
+    border: 1px solid #ccc; /*Border outline*/
+    border-radius: 10px; /*Round corners for teh text area*/
+}
+
+.input-group textarea {
+    min-height: 150px; /*Minimum height for the text area*/
+    resize: vertical; /*Text area can be adjust height vertically*/
+}
+
+.contact-bttn {
+    width: 100%; /*Button span full width of the form*/
+    padding: 10px; /*Add inner space for the contact button*/
+    background: var(--dark-blue-color);
+    color: var(--white-color);
+    font-size: var(--font-size-s);
+    border-radius: 20px;
+}
+
+/*Responsive media query code for max width 750px*/
+@media screen and (max-width: 750px) {
+    :root {
+        --font-size-m: 1rem;
+        --font-size-l: 1.3rem;
+        --font-size-xl: 1.5rem;
+        --font-size-xxl: 1.8rem;
+    }
+
+    body.show-mobile-menu header::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(3px); /*Blur the content behind the menu*/
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar :where(#menu-close-button, #menu-open-button) {
+        display: block;
+        font-size: var(--font-size-l);
+    }
+
+    .navbar #menu-close-button { /*Position the close button*/
+        position: absolute;
+        left: 35px;
+        top: 35px;
+    }
+
+    .navbar #menu-open-button {
+        color: var(--dark-color);
+    }
+
+    .navbar .nav-menu {
+        display: block;
+        position: fixed;
+        left: -300px; /*Hide menu to the left*/
+        top: 0;
+        width: 300px;
+        height: 100%; /*Full height*/
+        display: flex;
+        flex-direction: column; /*Stack links vertically*/
+        align-items: center;
+        padding-top: 100px; /*Add space to the top*/
+        background: var(--white-color);
+        transition: 0.3s ease; /*Smooth sliding when opening and closing the menu*/
+    }
+
+    body.show-mobile-menu .navbar .nav-menu {
+        left: 0; /*Slide the menu into view by moving to the left: 0*/
+    }
+
+    .navbar .nav-menu .nav-link {
+        color: var(--dark-color);
+        display: block; /*Stack vertically*/
+        margin-top: 17px;
+        font-size: var(--font-size-m);
+    }
+
+    .hero-section .hero-image-wrapper {
+        margin-top: 10px; /*Add space above image*/
+    }
+
+    .hero-section .hero-details .description { /*Set spacing around the description text*/
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 70px;
+    }
+
+    .project-section .section-content {
+        flex-direction: column; /*Stack cards vertically*/
+        align-items: center; /*Center cards horizontally*/
+        gap: 40px; /*Spacing between cards*/
+    }
+
+    .project-card {
+        flex: 0 0 90%; /*Fixed size, card width 90% of container*/
+        width: 400px; /*Set width for cards*/
+    }
+
+    .project-details {
+        margin: 0 20px; /*Add space to the right and left of the project details*/
+        flex-direction: column; /*Display project details vertically*/
+        gap: 50px; /*Set spacing between description and development*/
+    }
+
+    .contact-form {
+        width: 400px; /*Set width for contact form*/
+    }
+}

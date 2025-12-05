@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tay Yao Yee's Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!--For menu and close buttons-->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!--Navigation bar that includes home, project, about me, and contact-->
+        <header>
+            <nav class="navbar section-content">
+                
+                <ul class="nav-menu">
+                    <button id="menu-close-button" class="fas fa-times"></button>
+                    <li class="nav-item">
+                        <a href="#home" id="home-button" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" id="project-button" class="nav-link">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about-me" id="about-me-button" class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" id="contact-button" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <button id="menu-open-button" class="fas fa-bars"></button>
+            </nav>
+        </header>
+
+        <main>
+            <!--HERO SECTION-->
+            <section id="home" class="hero-section">
+
+            <div class="section-content">
+                <div class="hero-image-wrapper">
+                    <img src="client_image2.jpeg" alt="Tay Yao Yee" class="hero-image">
+                </div>
+
+                <div class="hero-details">
+                    <h2 class="name">Tay Yao Yee</h2>
+                    <p class="description">I'm a Multimedia Computing student with a passion for combining creativity and technology. I enjoy designing interactive experiences, developing user-friendly interfaces, and exploring visual storytelling through digital media.</p>
+                </div>
+            </div>
+            </section>
+
+            <!--PROJECT SECTION-->
+            <section id="project" class="project-section">
+
+                <div class="section-content">
+                    <div class="project-card">
+                        <img src="project_1.jpg" alt="Workout Guide Application">
+                        <h3>Workout Guide App</h3>
+                        <a href="project1.html" class="project-bttn">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="project_2.jpg" alt="ART Mobile Prototype">
+                        <h3>ART Mobile Prototype</h3>
+                        <a href="project2.html" class="project-bttn">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="project_3.jpg" alt="Mental Health Game">
+                        <h3>Mental Health Game</h3>
+                        <a href="project3.html" class="project-bttn">View Project</a>
+                    </div>
+                </div>
+            </section>
+
+            <!--ABOUT ME SECTION-->
+            <section id="about-me" class="about-me-section">
+                <div class="section-content">
+
+                    <div class="about-me-image-wrapper">
+                        <img src="about_me_2.jpg" alt="" class="about-me-image">
+                    </div>
+
+                    <div class="about-me-details">
+                        <p class="description">I’m currently studying at Universiti Malaysia Sarawak, with hobbies that include digital illustration, exploring new design tools, and discovering inspiring visual styles online.</p>
+                        <p class="description">The driving force behind my design work is a deep passion for creating meaningful and engaging digital experiences. As a Multimedia Computing student, I enjoy blending creativity with technology, exploring how visuals, interactivity, and storytelling can come together to communicate ideas effectively. I am fascinated by user-centered design and always strive to craft solutions that are both functional and visually appealing. From interactive web applications to motion graphics and 3D modeling, I seek opportunities to experiment, learn, and push the boundaries of my skills. Beyond technical expertise, I value creativity, problem-solving, and continuous growth. My ultimate goal is to design experiences that inspire, connect, and leave a lasting impact.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--CONTACT SECTION-->
+            <section id="contact" class="contact-section">
+                <div class="section content">
+                    
+                    <h1 class="title">Let's Chat!</h1>
+
+                    <form class="contact-form">
+
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Leave a message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-bttn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
